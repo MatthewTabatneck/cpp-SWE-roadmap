@@ -1,17 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <numeric>
-#include <algorithm>
-#include <limits>
-#include <tuple>
-
-std::tuple<int, int, double> compute_stats(const std::vector<int>& nums) {
-    int minVal = *std::min_element(nums.begin(), nums.end());
-    int maxVal= *std::max_element(nums.begin(), nums.end());
-    double avg = std::accumulate(nums.begin(), nums.end(), 0.0) / nums.size();
-    return {minVal, maxVal, avg};
-}
+#include "compute_stats.h"
 
 int main() {
     std::fstream file("data.txt");
