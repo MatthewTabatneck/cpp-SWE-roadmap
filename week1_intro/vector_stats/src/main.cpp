@@ -16,9 +16,19 @@ int main() {
     }
 
     std::vector<int> numbers;
-    int num;
-    while (file >> num) {
-        numbers.push_back(num);
+    numbers.reserve(310); 
+
+    std::string line;
+    while (std::getline(file, line)) {
+        try {
+            if (!line.empty()) {
+                numbers.push_back(std::stoi(line));
+            }
+        } catch (const std::invalid_argument& e) {
+            std::cerr << "Invalid number: \"" << line << "\"\n";
+        } catch ( const std::out_of_range& e) {
+            std::cerr << "Number out of range: \"" << line << "\"\n";
+        }
     }
 
 auto end_read = std::chrono::high_resolution_clock::now();
