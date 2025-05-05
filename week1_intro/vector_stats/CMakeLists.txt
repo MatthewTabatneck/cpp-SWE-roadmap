@@ -5,8 +5,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Main program
-add_executable(vector_stats main.cpp compute_stats.cpp)
+include_directories(include)
 
-# Test suite
-add_executable(run_tests test_stats.cpp compute_stats.cpp)
+# Main app
+add_executable(vector_stats
+    src/main.cpp
+    src/compute_stats.cpp
+)
+
+# Test app
+add_executable(run_tests
+    src/test_stats.cpp
+    src/compute_stats.cpp
+)
