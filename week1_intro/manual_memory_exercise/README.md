@@ -1,0 +1,1 @@
+Simple exercise for the use of allocating a dynamic array with **new** and **unique_ptr**, manipulating values then releasing the memory.
