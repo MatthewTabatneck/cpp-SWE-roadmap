@@ -1,0 +1,37 @@
+# Compiled object files
+*.o
+*.obj
+
+# Compiled binary files
+*.exe
+*.out
+*.app
+
+# Build directories
+build/
+bin/
+Debug/
+Release/
+
+# Precompiled headers
+*.gch
+*.pch
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# VS Code settings
+.vscode/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# MacOS metadata
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
