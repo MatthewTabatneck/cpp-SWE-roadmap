@@ -4,6 +4,14 @@
 #include <numeric>
 #include <algorithm>
 #include <limits>
+#include <tuple>
+
+std::tuple<int, int, double> compute_stats(const std::vector<int>& nums) {
+    int minVal = *std::min_element(nums.begin(), nums.end());
+    int maxVal= *std::max_element(nums.begin(), nums.end());
+    double avg = std::accumulate(nums.begin(), nums.end(), 0.0) / nums.size();
+    return {minVal, maxVal, avg};
+}
 
 int main() {
     std::fstream file("data.txt");
@@ -23,9 +31,7 @@ int main() {
         return 0;
     }
 
-    int minVal = *std::min_element(numbers.begin(), numbers.end());
-    int maxVal= *std::max_element(numbers.begin(), numbers.end());
-    double avg = std::accumulate(numbers.begin(), numbers.end(), 0.0) / numbers.size();
+    auto [minVal, maxVal, avg] = compute_stats(numbers);
 
     std::cout << "Count : " << numbers.size() << "\n";
     std::cout << "Min: " << minVal << "\n";
