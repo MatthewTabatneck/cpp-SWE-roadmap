@@ -1,2 +1,2 @@
 # cpp-SWE-roadmap
-Projects and exercises for becoming a C++ software engineer
+Projects and exercises for growing as a C++ software engineer
